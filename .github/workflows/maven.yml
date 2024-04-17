@@ -45,5 +45,11 @@ jobs:
           exclude_assets: 'maven-status,surefire-reports,test-classes,.nojekyll'
           publish_branch: last-html-results
 
+      - name: Upload html artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report.html
+          path: reports/cucumber-html-reports/html-report.html
+
 
 
