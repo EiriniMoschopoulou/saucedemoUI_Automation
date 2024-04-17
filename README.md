@@ -25,6 +25,7 @@ This project tests the UI functionality of https://www.saucedemo.com/ using Sele
 
 ### Clone the repository
 
+
 ```sh
 git clone git@github.com:EiriniMoschopoulou/saucedemoUI_Automation.git
 ```
