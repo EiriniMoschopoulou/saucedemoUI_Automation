@@ -43,6 +43,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target
           exclude_assets: 'maven-status,surefire-reports,test-classes,.nojekyll'
+          publish_branch: testbranch
 
 
 
