@@ -73,7 +73,7 @@ public class commonFunctions extends BaseClass {
     }
 
     public static void equals(Object actual, Object expected, String Errormessage) {
-        logger.info("checking if the received object: " + actual + "is the expected");
+        logger.info("checking if the received object: " + actual + " is the expected");
         try {
             Assert.assertEquals(actual, expected);
         } catch (Exception e) {
