@@ -14,8 +14,8 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: write
+#permissions:
+#  contents: write
 
 jobs:
   build:
@@ -37,18 +37,18 @@ jobs:
       - name: Build with Maven
         run: mvn test -Dcucumber.options="--plugin html:target/result.html" --file pom.xml
 
-      - name: Deploy report page to GitHub Page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target
-          exclude_assets: 'maven-status,surefire-reports,test-classes,.nojekyll'
-          publish_branch: last-html-results
+#      - name: Deploy report page to GitHub Page
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./target/reports/cucumber-html-reports
+#          #exclude_assets: 'maven-status,surefire-reports,test-classes,.nojekyll'
+#          publish_branch: last-html-results
 
       - name: Upload html artifact
         uses: actions/upload-artifact@v4
         with:
-          name: html-report.html
+          name: html-report
           path: ./target/reports/cucumber-html-reports/html-report.html
 
 
