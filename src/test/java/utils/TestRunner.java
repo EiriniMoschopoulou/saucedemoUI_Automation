@@ -9,11 +9,13 @@ import org.junit.runner.RunWith;
         plugin = {
 
                 "json:target/reports/cucumber-json-reports/json-report.json",
-                "html:target/reports/cucumber-html-reports/html-report.html"
+                "html:target/reports/cucumber-html-reports/html-report.html",
+
         },
         features = {"src/test/resources/Features"},
         glue={"steps","Hooks"}
 )
+
 
 public class TestRunner {
 
