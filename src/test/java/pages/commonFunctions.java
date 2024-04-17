@@ -15,12 +15,17 @@ import java.util.List;
 public class commonFunctions extends BaseClass {
 
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(Logger.class);
+    public static final By titlePage = By.xpath("//*[@data-test='title']");
 
     public commonFunctions(WebDriver driver) {
         super(driver);
         this.driver = driver;
     }
 
+    public static void verifyGeneralPageURL(String URL) {
+        logger.info(" Verifying the url on the browser is the expected " + URL);
+        driver.getCurrentUrl().equals(URL);
+    }
 
     public static void pressClick(By element) {
         logger.info(" Click to element: " + element);

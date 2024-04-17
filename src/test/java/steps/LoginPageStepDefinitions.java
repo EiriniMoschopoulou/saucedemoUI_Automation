@@ -22,7 +22,6 @@ public class LoginPageStepDefinitions {
             case "loggedIn":
                 productsPage.verifyProductsPageURL();
 
-
         }
     }
 

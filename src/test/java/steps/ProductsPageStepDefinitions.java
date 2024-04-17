@@ -49,13 +49,18 @@ public class ProductsPageStepDefinitions {
         productsPage.verifyExistenceofRemoveBtn(noOfRemovebtn);
     }
 
-    @And("each product has title")
+    @And("^each product has title")
     public void eachProductHasTitle() {
         productsPage.assertProductsTitleinProducts();
     }
 
-    @And("each product has price")
+    @And("^each product has price")
     public void eachProductHasPrice() {
         productsPage.assertProductsPriceinProducts();
+    }
+
+    @When("^user clicks on shopping cart button")
+    public void userClicksOnShoppingCartButton() {
+        productsPage.clickOnshoppingCartbtn();
     }
 }

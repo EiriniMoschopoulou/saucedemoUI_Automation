@@ -40,8 +40,12 @@ public class productsPage extends BaseClass {
     }
 
 
+
+
+
+
     public static void assertProductsListPageTitle(String title) {
-        String titleProducts = driver.findElement(titleProductsPage).getText();
+        String titleProducts = driver.findElement(commonFunctions.titlePage).getText();
         commonFunctions.equals(title, titleProducts,
                 "The title in the Products page is not the expected");
     }
@@ -112,6 +116,11 @@ public class productsPage extends BaseClass {
             logger.info("Checking that the price of each product is not null :" + productPrice);
             assertTrue(StringUtils.isNotEmpty(productPrice));
         }
+    }
+
+    public static void clickOnshoppingCartbtn() {
+        commonFunctions.elementIsDisplayed(shoppingCartBtn);
+        commonFunctions.pressClick(shoppingCartBtn);
     }
 }
 
