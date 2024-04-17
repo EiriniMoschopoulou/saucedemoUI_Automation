@@ -31,7 +31,6 @@ public class BaseClass {
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
 
-//        WebDriver driver=new ChromeDriver();
         System.out.println("This is the start of the driver");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);

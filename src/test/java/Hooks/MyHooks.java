@@ -32,7 +32,6 @@ public class MyHooks extends BaseClass {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-
         driver.manage().deleteAllCookies();
         System.out.println("This is the start of the scenario");
         driver.get("https://www.saucedemo.com/");

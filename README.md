@@ -62,4 +62,9 @@ Required Intellij Plugins:
   ### Run with reports
   -  To run all the tests and produce the corresponding HTML cucumber report use this command: ` mvn test -Dcucumber.options="--plugin html:target/result.html"`.
   -  To run a specific test and produce the corresponding HTML cucumber report use this command:(e.g) ` mvn test -Dcucumber.features="src/test/resources/Features/burgerMenu.feature"  -Dcucumber.options="--plugin html:target/result.html"`.
+  ### Run headless or not
+  - To do: change the chrome options in base class
+  
+//To do : input actions workflow procedure and how to see the reports
 
+(selenium grid,browserstack,webdrivermanager)
