@@ -65,16 +65,16 @@ Required Intellij Plugins:
 
 - Run the following command to execute the features: `mvn clean test` . By default, this command will invoke the Chrome browser and execute the tests. You can always right click to TestRunner.java and run all the tests as well.
 - To run a specific feature file among multiple feature files, use the command: (e.g.) `mvn test -Dcucumber.features="src/test/resources/Features/burgerMenu.feature"`. You can always right click to a specific feature file or unique scenario and run it.
-- Run the follow command if you want to download the maven dependencies without run the tests: `mvn clean install -DskipTests
+- Run the follow command if you want to download the maven dependencies without running the tests: `mvn clean install -DskipTests
   ` 
   ### Run with reports
-  -  To run all the tests and produce the corresponding HTML cucumber report use this command: ` mvn test -Dcucumber.options="--plugin html:target/result.html"`.
-  -  To run a specific test and produce the corresponding HTML cucumber report use this command:(e.g) ` mvn test -Dcucumber.features="src/test/resources/Features/burgerMenu.feature"  -Dcucumber.options="--plugin html:target/result.html"`.
+  -  To run all the tests and produce the corresponding HTML cucumber report use this command: ` mvn test -Dcucumber.options="--plugin html:target/reports/cucumber-html-reports/html-report.html"`.
+  -  To run a specific test and produce the corresponding HTML cucumber report use this command:(e.g) ` mvn test -Dcucumber.features="src/test/resources/Features/burgerMenu.feature"  -Dcucumber.options="--plugin html:target/reports/cucumber-html-reports/html-report.html"`.
   You can find the corresponding reports under:  ```target/reports```
   ### Run headless or not
   Since the default status of the project is to run headless, you can change that by ignoring the corresponding flag for chrome: 
   - Go to src/test/java/utils/BaseClass.java and comment out the line ```options.addArguments("--headless");``` and, 
-  - Go to src/test/java/Hooks/MyHooks.java and comment out the line ```options.addArguments("--headless")```;
+  - Go to src/test/java/Hooks/MyHooks.java and comment out the line ```options.addArguments("--headless");```
   
   ## Github actions
  This project includes CICD pipeline through Github actions. You can find the workflow set up file here ```.github/workflows/maven.yml``` .Phases of pipeline are:
@@ -89,6 +89,6 @@ Required Intellij Plugins:
 9. Complete job
 
 The Workflow file is set up in that way, that the actions are triggered upon every push and every pull request to main branch. 
-More over, each action produces an HTML artifact which is an HTML report which can be downloaded. The artifact is located to the summary of each completed action.
+More over, each action produces an artifact which is an HTML report that can be downloaded. The artifact is located to the summary of each completed action.
 
 
