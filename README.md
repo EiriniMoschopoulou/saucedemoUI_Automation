@@ -77,7 +77,7 @@ Required Intellij Plugins:
   - Go to src/test/java/Hooks/MyHooks.java and comment out the line ```options.addArguments("--headless")```;
   
   ## Github actions
- This project includes CICD pipeline through github actions. Phases of pipeline are:
+ This project includes CICD pipeline through Github actions. You can find the workflow set up file here ```.github/workflows/maven.yml``` .Phases of pipeline are:
 1. Set up job
 2. Run actions/checkout@v3
 3. Set up JDK 22
@@ -89,6 +89,6 @@ Required Intellij Plugins:
 9. Complete job
 
 The Workflow file is set up in that way, that the actions are triggered upon every push and every pull request to main branch. 
-More over, each action produces an HTML artifact which is an HTML report which can be downloaded. The artifact is located to the summary of each completed actions.
+More over, each action produces an HTML artifact which is an HTML report which can be downloaded. The artifact is located to the summary of each completed action.
 
 
