@@ -13,6 +13,12 @@
     </li>
     <li><a href="#installation-and-prerequisites">Installation And Prerequisites</a></li>
     <li><a href="#how-to-run-tests">How to run tests</a></li>
+     <ul>
+        <li><a href="#run-with-reports">Run with reports</a></li>
+        <li><a href="#run-headless-or-not">Run headless or not</a></li>
+      </ul>
+
+ <li><a href="#github-actions">Github actions</a></li>
 
   </ol>
 </details>
@@ -59,12 +65,30 @@ Required Intellij Plugins:
 
 - Run the following command to execute the features: `mvn clean test` . By default, this command will invoke the Chrome browser and execute the tests. You can always right click to TestRunner.java and run all the tests as well.
 - To run a specific feature file among multiple feature files, use the command: (e.g.) `mvn test -Dcucumber.features="src/test/resources/Features/burgerMenu.feature"`. You can always right click to a specific feature file or unique scenario and run it.
+- Run the follow command if you want to download the maven dependencies without run the tests: `mvn clean install -DskipTests
+  ` 
   ### Run with reports
   -  To run all the tests and produce the corresponding HTML cucumber report use this command: ` mvn test -Dcucumber.options="--plugin html:target/result.html"`.
   -  To run a specific test and produce the corresponding HTML cucumber report use this command:(e.g) ` mvn test -Dcucumber.features="src/test/resources/Features/burgerMenu.feature"  -Dcucumber.options="--plugin html:target/result.html"`.
+  You can find the corresponding reports under:  ```target/reports```
   ### Run headless or not
-  - To do: change the chrome options in base class
+  Since the default status of the project is to run headless, you can change that by ignoring the corresponding flag for chrome: 
+  - Go to src/test/java/utils/BaseClass.java and comment out the line ```options.addArguments("--headless");``` and, 
+  - Go to src/test/java/Hooks/MyHooks.java and comment out the line ```options.addArguments("--headless")```;
   
-//To do : input actions workflow procedure and how to see the reports
+  ## Github actions
+ This project includes CICD pipeline through github actions. Phases of pipeline are:
+1. Set up job
+2. Run actions/checkout@v3
+3. Set up JDK 22
+4. Install Google chrome
+5. Build with maven 
+6. Upload html artifact
+7. Post Set up JDK 22
+8. Post Run actions/checkout@v3
+9. Complete job
 
-(selenium grid,browserstack,webdrivermanager)
+The Workflow file is set up in that way, that the actions are triggered upon every push and every pull request to main branch. 
+More over, each action produces an HTML artifact which is an HTML report which can be downloaded. The artifact is located to the summary of each completed actions.
+
+
